@@ -1,0 +1,19 @@
+.startPage, #qOne {
+    text-align: center;
+}
+#instructions {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+#start, #qOneChoiceOne, #qOneChoiceTwo, #qOneChoiceThree, #qOneChoiceFour {
+    background-color: purple;
+    color: white;
+}
+
+#qOneChoiceOne, #qOneChoiceTwo, #qOneChoiceThree, #qOneChoiceFour {
+    text-align: left;
+    margin-left: 30%;
+}
+#qOne, #qOneChoiceOne, #qOneChoiceTwo, #qOneChoiceThree, #qOneChoiceFour {
+    display: none;
+}
