@@ -1,76 +1,67 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <!-- page title -->
     <title>
-        Javascript Quiz
+      Javascript Quiz
     </title>
     <!-- normalize link, bootstrap, and style sheet -->
-    <link rel="normalize" href="./normalize.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="normalize" href="./normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
 
     <div class="row">
-        <div class="col-md-2">
-            View Highscores
-        </div>
-        <div class="col-md-9">
-
-        </div>
-        <div class="col-md-1" id="timer">
-            timer 75
-        </div>
+      <div class="col-md-2">
+        View Highscores
+      </div>
+      <div class="col-md-9"></div>
+      <div class="col-md-1" id="timer">
+        timer 75
+      </div>
     </div>
-<br>
-</head>
+    <br />
+  </head>
 
-<body>
+  <body>
     <!-- main block  -->
     <div class="startPage">
-        <h1 id="header">
-            Coding Quiz Challenge
-        </h1>
-        <br>
-        <p id="instructions">
-            Answer the following multiple choice questions about javascript, it will be timed and your score will be
-            time remaining, for each question answered incorrectly time will be deducted. At the end you can save your
-            high scores. Good luck!!!
-        </p>
+      <h1 id="header">
+        Coding Quiz Challenge
+      </h1>
+      <br />
+      <p id="instructions">
+        Answer the following multiple choice questions about javascript, it will
+        be timed and your score will be time remaining, for each question
+        answered incorrectly time will be deducted. At the end you can save your
+        high scores. Good luck!!!
+      </p>
 
-        <button id="start">
-            Start Quiz
-        </button>
+      <button id="start">
+        Start Quiz
+      </button>
     </div>
 
     <div class="one">
-        <h1 id="qOne">
-            Commonly used date types do not include:
-        </h1>
-        <button id="qOneChoiceOne">
-            1. Strings
-        </button>
-        <br>
-        <button id="qOneChoiceTwo">
-            2. Booleans
-        </button>
-        <br>
-        <button id="qOneChoiceThree">
-            3. Alerts
-        </button>
-        <br>
-        <button id="qOneChoiceFour">
-            4. Numbers
-        </button>
+      <h1 id="qOne"></h1>
+      <button id="qOneChoiceOne"></button>
+      <br />
+      <button id="qOneChoiceTwo"></button>
+      <br />
+      <button id="qOneChoiceThree"></button>
+      <br />
+      <button id="qOneChoiceFour"></button>
     </div>
 
-
-
-
+    <div id="name">
+      Name:<input type="text" />
+      <button id="submit">Submit</button>
+    </div>
     <!-- link to javascript -->
     <script src="./script.js"></script>
-</body>
-
-
+  </body>
 </html>
