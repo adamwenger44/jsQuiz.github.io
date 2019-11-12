@@ -11,6 +11,10 @@ var username = document.querySelector('#name');
 username.style.display = 'None';
 var submit = document.querySelector('#submit');
 var timerInterval;
+var finalScore = username.querySelector('h5');
+var list = document.querySelector('#highScoresList');
+var highScores = [];
+var uname = document.querySelector('input').value;
 
 var questions = [
   {
@@ -22,44 +26,35 @@ var questions = [
     title: 'The condition in an if / else statement is enclosed within ____.',
     choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
     answer: 'parentheses'
+  },
+  {
+    title: 'Inside which HTML element do we put the javascript?',
+    choices: ['js', 'script', 'javascript', 'scripting'],
+    answer: 'script'
+  },
+  {
+    title: 'What is the correct syntax for referring to an external script called "xxx.js"?',
+    choices: ['<script src= "xxx.js"', '<script href= "xxx.js"', '<script name= "xxx.js"', 'none of the above'],
+    answer: '<script src= "xxx.js"'
+  },
+  {
+    title: 'How do you write "Hello World" in an alert box?',
+    choices: ['msg("Hello, World");', 'msgBox("Hello, World");', 'alert("Hello, World");', 'alertBox("Hello, World");'],
+    answer: 'alert("Hello, World");'
   }
 ];
 
-buttons.forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var q = questions[i];
-    if (btn.textContent != q['answer']) {
-      secondsLeft -= 15;
-    }
-    if (i == questions.length - 1) {
+function setTime() {
+  timerInterval = setInterval(function () {
+    secondsLeft--;
+    time.textContent = 'timer ' + secondsLeft;
+
+    if (secondsLeft === 0) {
       clearInterval(timerInterval);
-      one.style.display = 'none';
-      username.style.display = 'block';
     }
-    else {
-      displayQuestion()
-    }
-  });
-});
-
-function displayQuestion() {
-  i++;
-  var q = questions[i];
-  title.innerHTML = q['title'];
-  var j = 0;
-  buttons.forEach(function (btntxt) {
-    btntxt.innerText = q['choices'][j];
-    j += 1;
-  });
-
+  }, 1000);
 }
 
-
-submit.addEventListener('click', function () {
-  var uname = document.querySelector('input').value;
-  localStorage.setItem('name', uname);
-  localStorage.setItem('score', secondsLeft);
-});
 
 startBtn.addEventListener('click', function () {
   one.style.display = 'block';
@@ -76,13 +71,59 @@ startBtn.addEventListener('click', function () {
   one.style.display = 'inline';
 });
 
-function setTime() {
-  timerInterval = setInterval(function () {
-    secondsLeft--;
-    time.textContent = 'timer ' + secondsLeft;
+function displayQuestion() {
+  i++;
+  var q = questions[i];
+  title.innerHTML = q['title'];
+  var j = 0;
+  buttons.forEach(function (btntxt) {
+    btntxt.innerText = q['choices'][j];
+    j += 1;
+  });
 
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-    }
-  }, 1000);
 }
+
+function lastPage() {
+  clearInterval(timerInterval);
+  one.style.display = 'none';
+  username.style.display = 'block';
+  finalScore.textContent = 'Your final score is: ' + time.textContent;  
+}
+
+
+buttons.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var q = questions[i];
+    if (i == questions.length - 1 && btn.textContent == q['answer']) {
+      time.textContent = secondsLeft - 0
+      lastPage()
+    }
+    if (i == questions.length - 1 && btn.textContent != q['answer']) {
+      time.textContent = secondsLeft - 15;
+      lastPage()
+    }
+
+    else if (btn.textContent != q['answer']) {
+      secondsLeft -= 15;
+      displayQuestion()
+    }
+
+    else if (btn.textContent == q['answer']) {
+      displayQuestion()
+    }
+
+
+  });
+});
+
+
+
+submit.addEventListener('click', function () {
+  var uname = document.querySelector('input').value;
+  localStorage.setItem('name', JSON.stringify (uname));
+  localStorage.setItem('score', JSON.stringify (time.textContent));
+  var li = document.createElement("li");
+  li.textContent = uname + ' Score: ' + time.textContent;
+  list.appendChild(li);
+
+});
