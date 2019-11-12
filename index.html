@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- page title -->
-    <title>
-      Javascript Quiz
-    </title>
-    <!-- normalize link, bootstrap, and style sheet -->
-    <link rel="normalize" href="js css and images/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="js css and images/style.css" />
 
-    <div class="row">
-      <div class="col-md-2">
-       
-      </div>
-      <div class="col-md-9"></div>
-      <div class="col-md-1" id="timer">
-        timer 75
-      </div>
+<head>
+  <!-- page title -->
+  <title>
+    Javascript Quiz
+  </title>
+  <!-- normalize link, bootstrap, and style sheet -->
+  <link rel="normalize" href="js css and images/normalize.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="js css and images/style.css" />
+
+  <div class="row">
+    <div class="col-md-2">
+
     </div>
+    <div class="col-md-9"></div>
+    <div class="col-md-1" id="timer">
+      timer 75
+    </div>
+  </div>
+  <br />
+</head>
+
+<body>
+  <!-- main block  -->
+  <div class="startPage">
+    <h1 id="header">
+      Coding Quiz Challenge
+    </h1>
     <br />
-  </head>
+    <!-- instructions -->
+    <p id="instructions">
+      Answer the following multiple choice questions about javascript, it will
+      be timed and your score will be time remaining, for each question
+      answered incorrectly time will be deducted. At the end you can save your
+      high scores. Good luck!!!
+    </p>
+    <!-- button to start quiz -->
+    <button id="start">
+      Start Quiz
+    </button>
+  </div>
+  <!-- placeholders for questions and answers -->
+  <div class="one">
+    <h1 id="qOne"></h1>
+    <button id="qOneChoiceOne"></button>
+    <br />
+    <button id="qOneChoiceTwo"></button>
+    <br />
+    <button id="qOneChoiceThree"></button>
+    <br />
+    <button id="qOneChoiceFour"></button>
+  </div>
+  <!-- final page layout -->
+  <div id="name">
+    <h3>All Done!</h3>
+    <h5 id="finalScore">g</h5>
+    Name:<input type="text" />
+    <button id="submit">Submit</button>
+  </div>
+  <div id="highScoresList"></div>
+  <!-- link to javascript -->
+  <script src="js css and images/script.js"></script>
+</body>
 
-  <body>
-    <!-- main block  -->
-    <div class="startPage">
-      <h1 id="header">
-        Coding Quiz Challenge
-      </h1>
-      <br />
-      <p id="instructions">
-        Answer the following multiple choice questions about javascript, it will
-        be timed and your score will be time remaining, for each question
-        answered incorrectly time will be deducted. At the end you can save your
-        high scores. Good luck!!!
-      </p>
-
-      <button id="start">
-        Start Quiz
-      </button>
-    </div>
-
-    <div class="one">
-      <h1 id="qOne"></h1>
-      <button id="qOneChoiceOne"></button>
-      <br />
-      <button id="qOneChoiceTwo"></button>
-      <br />
-      <button id="qOneChoiceThree"></button>
-      <br />
-      <button id="qOneChoiceFour"></button>
-    </div>
-
-    <div id="name">
-      <h3>All Done!</h3>
-      <h5 id="finalScore">g</h5>
-      Name:<input type="text" />
-      <button id="submit">Submit</button>
-    </div>
-    <div id="highScoresList"></div>
-    <!-- link to javascript -->
-    <script src="js css and images/script.js"></script>
-  </body>
 </html>

@@ -1,0 +1,17 @@
+.startPage, #qOne, #name, #highScoresList {
+    text-align: center;
+}
+#instructions {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+#start, #submit, #qOneChoiceOne, #qOneChoiceTwo, #qOneChoiceThree, #qOneChoiceFour {
+    background-color: purple;
+    color: white;
+}
+
+#qOneChoiceOne, #qOneChoiceTwo, #qOneChoiceThree, #qOneChoiceFour {
+    text-align: left;
+    margin-left: 30%;
+}
+
